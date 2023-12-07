@@ -55,7 +55,7 @@ def display_board(board: List[List[int]]) -> None:
 
     player1_edge_backslash = blue + "\\" + normal
     player1_edge_straight = blue + "|" + normal
-    print("\n       1   2   3   4   5           ")
+    print("       1   2   3   4   5           ")
     print_red_nl("   ======================            ")
     print(f"    {player1_edge_backslash} / \ / \ / \ / \ / {player1_edge_backslash}          ")
     print(f"  A  {player1_edge_straight} {temp[0]} | {temp[1]} | {temp[2]} | {temp[3]} | {temp[4]} {player1_edge_straight}  A             ") # first row
@@ -92,6 +92,33 @@ def display_intro() -> None:
     print_blue_nl("    $$    $$/ $$       |$$ |  $$ |$$       |$$ |     $$    $$ |  $$  $$/ $$    $$/ $$ |      ")
     print_blue_nl("    $$$$$$/   $$$$$$$/ $$/   $$/  $$$$$$$/ $$/       $$$$$$$/    $$$$/   $$$$$$/  $$/        ")
     print()
+
+def display_outro() -> None:
+    print_yellow_nl("                        *****************                     ")
+    print_yellow_nl("               ******               ******                    ")
+    print_yellow_nl("           ****                           ****                ")
+    print_yellow_nl("        ****                                 ***              ")
+    print_yellow_nl("      ***                                       ***           ")
+    print_yellow_nl("     **           ***               ***           **          ")
+    print_yellow_nl("   **           *******           *******          ***        ")
+    print_yellow_nl("  **            *******           *******            **       ")
+    print_yellow_nl(" **             *******           *******             **      ")
+    print_yellow_nl(" **               ***               ***               **      ")
+    print_yellow_nl("**                                                     **     ")
+    print_yellow_nl("**       *                                     *       **     ")
+    print_yellow_nl("**      **                                     **      **     ")
+    print_yellow_nl(" **   ****                                     ****   **      ")
+    print_yellow_nl(" **      **                                   **      **      ")
+    print_yellow_nl("  **       ***                             ***       **       ")
+    print_yellow_nl("   ***       ****                       ****       ***        ")
+    print_yellow_nl("     **         ******             ******         **          ")
+    print_yellow_nl("      ***            ***************            ***           ")
+    print_yellow_nl("        ****                                 ****             ")
+    print_yellow_nl("           ****                           ****                ")
+    print_yellow_nl("               ******               ******                    ")
+    print_yellow_nl("                    *****************                         ")
+    print_blue_nl("THANKS FOR PLAYING !!")
+    print_green_nl("Don't forget to give a star or fork this project!")
 
 def main() -> None:
     display_intro()
