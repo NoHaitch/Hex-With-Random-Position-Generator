@@ -90,24 +90,23 @@ def is_connected_recursive(i: int, j: int, player: int, board: List[List[int]], 
         return False, visited
     else:
         visited.append((i, j))
-        if(board[i][j] == player):
-            if(player == 1 and j == len(board)-1):
+        
+        if board[i][j] == player:
+            if player == 1 and j == len(board) - 1:
                 return True, visited
-            elif(player == 2 and i == len(board)-1):
+            elif player == 2 and i == len(board) - 1:
                 return True, visited
-            else:
-                neighbors = {(0, 1), (-1, 1), (-1, 0), (0, -1), (1, -1), (1, 0)}
-                for (neighbor_i, neighbor_j) in neighbors:
-                    new_i = i + neighbor_i
-                    new_j = j + neighbor_j
-                    if(not (new_i, new_j) in visited):
-                        found, visited = is_connected_recursive(new_i, new_j, player, board, visited)
-                        if found:
-                            return found, visited
-                return False, visited
 
-        else:
-            return False, visited
+            neighbors = {(0, 1), (-1, 1), (-1, 0), (0, -1), (1, -1), (1, 0)}
+            for neighbor_i, neighbor_j in neighbors:
+                new_i = i + neighbor_i
+                new_j = j + neighbor_j
+                if (new_i, new_j) not in visited:
+                    found, visited = is_connected_recursive(new_i, new_j, player, board, visited)
+                    if found:
+                        return found, visited
+
+    return False, visited
 
 def check_win_player1(board: List[List[int]]) -> bool:
     # PLAYER 1 goal is connecting the left and right side of the board
@@ -130,7 +129,9 @@ def check_win_player1(board: List[List[int]]) -> bool:
         if board[i][0] == 1:
             visited = []
             result_recur = is_connected_recursive(i, 0, 1, board, visited)
-    return result_recur[0]
+            if(result_recur[0]):
+                    return result_recur[0]
+    return False
 
 def check_win_player2(board: List[List[int]]) -> bool:
     # PLAYER 2 goal is connecting the top and bottom side of the board
@@ -153,7 +154,9 @@ def check_win_player2(board: List[List[int]]) -> bool:
         if board[0][i] == 2:
             visited = []
             result_recur = is_connected_recursive(0, i, 2, board, visited)
-    return result_recur[0]
+            if(result_recur[0]):
+                return result_recur[0]
+    return False
 
 def is_won(board) -> bool:
     return check_win_player1(board) or check_win_player2(board)
