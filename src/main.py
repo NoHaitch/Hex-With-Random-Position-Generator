@@ -1,5 +1,6 @@
 from display import *
 from game import *
+from generate import *
 from typing import List
 
 # NOTES
@@ -15,7 +16,7 @@ def main():
         if(command == 1): rules()
         elif(command == 2): help()
         elif(command == 3): play()
-        elif(command == 4): None
+        elif(command == 4): generate()
         elif(command == 5): break
     display_outro()
 
