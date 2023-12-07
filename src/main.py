@@ -8,12 +8,16 @@ from typing import List
 
 # Main function
 def main():
+    print_green_nl("============================================== PROGRAM STARTED ==============================================")
     display_intro()
-    command = menu()
-    if(command == 1): rules()
-    elif(command == 2): help()
-    elif(command == 3): None
-    elif(command == 4): None
+    while True:
+        command = menu()
+        if(command == 1): rules()
+        elif(command == 2): help()
+        elif(command == 3): play()
+        elif(command == 4): None
+        elif(command == 5): break
+    display_outro()
 
 if __name__ == "__main__":
     main()
