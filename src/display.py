@@ -120,7 +120,7 @@ def display_outro() -> None:
     print_blue_nl("THANKS FOR PLAYING !!")
     print_green_nl("Don't forget to give a star or fork this project!")
 
-def main() -> None:
+if __name__ == "__main__":
     display_intro()
     print_blue_nl("This text is in blue.")
     print_red_nl("This text is in red.")
@@ -130,6 +130,3 @@ def main() -> None:
     x = input_color("name : ")
     print("this is the end of input_color")
     print_red_nl(f"result: {x}")
-
-if __name__ == "__main__":
-    main()
