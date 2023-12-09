@@ -1,7 +1,7 @@
 from display import *
 from game import *
 from generate import *
-from typing import List
+from test import *
 
 # NOTES
 # PLAYER 1 is O with the color BLUE
@@ -17,7 +17,9 @@ def main():
         elif(command == 2): help()
         elif(command == 3): play()
         elif(command == 4): generate()
-        elif(command == 5): break
+        elif(command == 5): generate_filled()
+        elif(command == 6): test_IO()
+        elif(command == 7): break
     display_outro()
 
 if __name__ == "__main__":
