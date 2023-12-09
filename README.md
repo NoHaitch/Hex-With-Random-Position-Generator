@@ -62,6 +62,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#special-thanks">Special Thanks</a></li>
+    <li><a href="#links">Links</a></li>
   </ol>
 </details>
 
@@ -161,7 +162,8 @@ Permintaan Pull __sangat diperbolehkan dan diterima dengan hangat__. -->
 ## Licensing
 
 The code in this project is licensed under MIT license.  
-<!-- Add other targeted langguage: Code dalam projek ini berada di bawah lisensi MIT. -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- SPECIAL THANKS AND/OR CREDITS -->
@@ -170,11 +172,20 @@ The code in this project is licensed under MIT license.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+<!-- Links-->
+## Links
+- Repository : https://github.com/NoHaitch/Hex-With-Random-Position-Generator
+  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <br>
 <h3 align="center"> THANK YOU! </h3>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[issues-url]: https://github.com/NoHaitch/Repository_Template/issues
+[issues-url]: https://github.com/NoHaitch/Hex-With-Random-Position-Generator/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/NoHaitch/Repository_Template/blob/main/LICENSE
+[license-url]: https://github.com/NoHaitch/Hex-With-Random-Position-Generator/blob/main/LICENSE
