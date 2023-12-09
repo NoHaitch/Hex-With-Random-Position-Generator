@@ -4,11 +4,11 @@
 
 <br />
 <div align="center">
-  <h1 align="center">Discrete Math Final Project</h1>
+  <h1 align="center">Hex With Random Position Generator</h1>
 
   <p align="center">
-    <h3>Random Hex(Board Game) Generator</h3>
-    <h4> Generate a Hex Game Result</h4>
+    <h3>Implementation of 5x5 Hex Board Game With Random Position Generator in Python</h3>
+    <h4>note: you can change the size of board for testing by changing the variable "board_size", this will only work for test </h4>
     <br/>
     <!-- IMAGE OR LOGO -->
     <!-- <img src="" alt="Project Logo // Team Picture // etc">
@@ -30,33 +30,6 @@
   <strong>
     <h3>Made By:</h3>
     <h3>Raden Francisco Trianto Bratadiningrat</h3>
-    <!-- OPTIONAL TABLE FOR MULTIPLE PEOPLE -->
-    <!-- <table align="center">
-      <tr>
-        <td>ID</td>
-        <td>Name</td>
-      </tr>
-      <tr>
-        <td>ID 1</td>
-        <td>FULL NAME Person 1</td>
-      </tr>
-      <tr>
-        <td>ID 2</td>
-        <td>FULL NAME Person 2</td>
-      </tr>
-      <tr>
-        <td>ID 3</td>
-        <td>FULL NAME Person 3</td>
-      </tr>
-      <tr>
-        <td>ID 4</td>
-        <td>FULL NAME Person 4</td>
-      </tr>
-      <tr>
-        <td>ID 5</td>
-        <td>FULL NAME Person 5</td>
-      </tr>
-    </table> -->
   </strong>
   <br>
 </div>
@@ -75,18 +48,16 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#instruction">Instruction</a></li>
-        <li>
-        <details>
-          <summary><a href="#features">Features</a></summary>
-          <ol>
-            <li><a href="#1-feature-x">Features - 1</a></li>
-            <li><a href="#2-feature-y">Features - 2</a></li>
-            <li><a href="#3-feature-z">Features - 3</a></li>
-          <ol>
-        </details>
-        </li>
       </ul>
+    </li>
+    <li>
+      <a href="#features">Features</a>
+        <ol>
+          <li><a href="#1-play">Play</a></li>
+          <li><a href="#2-generate">Generate</a></li>
+          <li><a href="#3-generate-filled">Generate-filled</a></li>
+          <li><a href="#4-test">Test</a></li>
+        </ol>
     </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -94,18 +65,12 @@
   </ol>
 </details>
 
-## External Links
-
-- [Link A](https://example.com)
-- [Link B](https://example.com)
-- [Link C](https://example.com)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-General Explanation about the project, Why you made this, What does it do exactly.  
+In the making of my paper about Hex, I was in need of a Program that generates Random Position. With this project I made that program. This program could get the win percentage of going first in Hex using the sample amount we put in it. As an addition, I also made the game playable although i didn't make an AI opponent. 
 
 <!-- OPTIONAL LINK OR REFERENCE -->
 <!-- <p align="center">
@@ -123,19 +88,16 @@ You can explore more on this link ...
 
 ### Prerequisites
 
-Project dependencies  
-example :  
-
-* Make 
+* Python  
+  
+  - in Linux Ubuntu
   ```sh
-  # in Linux
-  sudo apt install make
+  $ sudo apt update
+  $ sudo apt install python3
   ```
-* Python
-  ```sh
-  # in Linux
-  sudo apt install python3
-  ```
+  - in Windows  
+  
+    use Python installer found here: https://www.python.org/downloads/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,48 +107,38 @@ _How to install and use your project_
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/NoHaitch/Repository_Template
+   git clone https://github.com/NoHaitch/Hex-With-Random-Position-Generator
    ```
-2. Change the content
+2. Run using Python
+    ```sh
+    cd src              # change directory
+    python main.py      # or use python3 main.py 
+    ```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- INSTURCTION -->
-## Instruction
-Instruction to run/build/etc the program  
-example: 
-
-`make build` : To build from source to binary into bin/main  
-`make all` : Run binary directly after building   
-`make clean` : Remove all build generated files  
-`make ADT.test` : Running test for ADT test file, for example ( `make time.test` )  
-`make test.all` : Running all test  
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FEATURES -->
 ## Features
 
-### 1. Feature X
+### 1. Play
 
-this feature does X
+Play the game of hex on a 5x5 board
 
-### 2. Feature Y
+### 2. Generate
 
-this feature does Y  
-sub-features:
-   1. function 1
-   2. function 2
-   3. function 3
+Generate A random game of hex
 
-### 3. Feature Z
+### 3. Generate-filled
 
-this feature does Z
-- `A`: print A.  
-- `B`: print B.  
-- `C`: print C.
+Generate A random game of hex but, make it so the board is fully filled  
+*this make it so blue always win*
+  
+### 4. Test
+
+Test a sample amount of randomly generated game of hex. Resulting in the amount each player wins, and the win percentage of the first player or the player going first
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -196,6 +148,7 @@ this feature does Z
 
 If you want to contribute or further develop the program, please fork this repository using the branch feature.  
 Pull Request is **permited and warmly welcomed**
+
 <!-- In bahasa Indonesia: Jika Anda ingin berkontribusi atau melanjutkan perkembangan program, silahkan fork repository ini dan gunakan branch fitur.  
 
 Permintaan Pull __sangat diperbolehkan dan diterima dengan hangat__. -->
