@@ -4,12 +4,14 @@ from display import *
 from game import *
 from generate import *
 
+board_size = 5
+
 # THIS FILE FOR THE TESTING OF 2 FACTS
 # 1. In Hex, There is always a winner, the game cannot be a draw
 # 2. Trying to prove that going first has an advantage
 
 def test_single_game() -> Tuple[int, int]:
-    board = [[0 for _ in range(5)] for _ in range(5)]
+    board = [[0 for _ in range(board_size)] for _ in range(board_size)]
     current_player = 1
     while not is_won(board):
         code = generate_location_code(board)

@@ -3,8 +3,11 @@ import random as rd
 from display import *
 from game import *
 
+# change this to change size of the board
+board_size = 5
+
 def generate_location_code(board: List[List[int]]) -> str: 
-    empty_positions = [(i, j) for i in range(5) for j in range(5) if board[i][j] == 0]
+    empty_positions = [(i, j) for i in range(board_size) for j in range(board_size) if board[i][j] == 0]
     random_empty_position = rd.choice(empty_positions)
     row, col = random_empty_position
     row_code = chr(row + 65)
@@ -15,7 +18,7 @@ def generate_location_code(board: List[List[int]]) -> str:
 def generate() -> None:
     while True:
         print_red("\n================ "); print_yellow("GENERATING"); print_red_nl(" ================")
-        board = [[0 for _ in range(5)] for _ in range(5)]
+        board = [[0 for _ in range(board_size)] for _ in range(board_size)]
         current_player = 1
         while(not is_won(board)):
             code = generate_location_code(board)
@@ -44,7 +47,7 @@ def generate_filled() -> None:
     while True:
         print_red("\n================ "); print_yellow("GENERATING"); print_red_nl(" ================")
         while True:
-            board = [[0 for _ in range(5)] for _ in range(5)]
+            board = [[0 for _ in range(board_size)] for _ in range(board_size)]
             current_player = 1
             while(not is_won(board)):
                 code = generate_location_code(board)
