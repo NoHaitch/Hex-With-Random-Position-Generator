@@ -73,6 +73,8 @@
 
 In the making of my paper about Hex, I was in need of a Program that generates Random Position. With this project I made that program. This program could get the win percentage of going first in Hex using the sample amount we put in it. As an addition, I also made the game playable although i didn't make an AI opponent. 
 
+You can check the resulting paper in this link below:  
+https://github.com/NoHaitch/Hex-With-Random-Position-Generator/blob/main/docs/Application%20of%20Graph%20Theory%20on%20the%20Advantage%20of%20Going%20First%20in%20Hex.pdf 
 <!-- OPTIONAL LINK OR REFERENCE -->
 <!-- <p align="center">
 You can explore more on this link ... 
@@ -116,8 +118,6 @@ _How to install and use your project_
     python main.py      # or use python3 main.py 
     ```
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
