@@ -3,16 +3,18 @@ from typing import List, Tuple
 
 def menu() -> int:
     while True:
-        print("\n==================== ", end="");print_yellow("MENU");print(" ====================")
+        print("\n==================== ", end=""); print_yellow("MENU"); print(" ====================")
         print(" 1. Rules")
         print(" 2. Help")
         print(" 3. Play ")
         print(" 4. Generate ")
-        print(" 5. Quit / Exit ")
+        print(" 5. Generate-filled")
+        print(" 6. Test")
+        print(" 7. Quit / Exit ")
         print("Choose Command:")
         user_input = input_color("")
         
-        if user_input in ["1", "2", "3", "4", "5"]:
+        if user_input in ["1", "2", "3", "4", "5", "6", "7"]:
             return int(user_input)
         elif user_input.lower() == "rules":
             return 1
@@ -22,27 +24,31 @@ def menu() -> int:
             return 3
         elif user_input.lower() == "generate":
             return 4
-        elif user_input.lower() == "quit" or user_input.lower() == "exit" :
+        elif user_input.lower() == "generate-filled":
             return 5
+        elif user_input.lower() == "test":
+            return 6
+        elif user_input.lower() == "quit" or user_input.lower() == "exit" :
+            return 7
         else:
             print_red_nl("Invalid input\n")
 
 def rules() -> None:
-    print("\n==================== ", end="");print_yellow("RULES");print(" ====================")
+    print("\n==================== ", end=""); print_yellow("RULES"); print(" ====================")
     print(" - The Objective of the game is to connect 2 side of the board depending on which player")
-    print(" - ",end="");print_blue("Player 1");print(" is represented as ",end="");print_blue("O");print(" and the color ",end="");print_blue_nl("BLUE")
-    print(" - ",end="");print_blue("Player 1");print(" wins by connecting the ",end="");print_blue("left");print(" and ",end="");print_blue("right");print(" side of the board")
-    print(" - ",end="");print_red("Player 2");print(" is represented as ",end="");print_red("X");print(" and the color ",end="");print_red_nl("RED")
-    print(" - ",end="");print_red("Player 2");print(" wins by connecting the ",end="");print_red("top");print(" and ",end="");print_red("bottom");print(" side of the board")
+    print(" - ",end=""); print_blue("Player 1"); print(" is represented as ",end=""); print_blue("O"); print(" and the color ",end=""); print_blue_nl("BLUE")
+    print(" - ",end=""); print_blue("Player 1"); print(" wins by connecting the ",end=""); print_blue("left"); print(" and ",end=""); print_blue("right"); print(" side of the board")
+    print(" - ",end=""); print_red("Player 2"); print(" is represented as ",end=""); print_red("X"); print(" and the color ",end=""); print_red_nl("RED")
+    print(" - ",end=""); print_red("Player 2"); print(" wins by connecting the ",end=""); print_red("top"); print(" and ",end=""); print_red("bottom"); print(" side of the board")
 
 def help() -> None:
-    print("\n==================== ", end="");print_yellow("HELP");print(" ====================")
+    print("\n==================== ", end=""); print_yellow("HELP"); print(" ====================")
     print("To use the menu, input number or the command")
-    print("example: ",end="");print_green_nl("1/Rules/rule/ruLe")
-    print("Use the command '",end="");print_yellow("rules");print("' to get the rules of hex board game")
-    print("Use the command '",end="");print_yellow("help");print("' to get the explanation of the commands")
-    print("Use the command '",end="");print_yellow("play");print("' to play a game of hex")
-    print("Use the command '",end="");print_yellow("generate");print("' to generate a game of hex")
+    print("example: ",end=""); print_green_nl("1/Rules/rule/ruLe")
+    print("Use the command '",end=""); print_yellow("rules"); print("' to get the rules of hex board game")
+    print("Use the command '",end=""); print_yellow("help"); print("' to get the explanation of the commands")
+    print("Use the command '",end=""); print_yellow("play"); print("' to play a game of hex")
+    print("Use the command '",end=""); print_yellow("generate"); print("' to generate a game of hex")
    
 def set_hex(valid_code: str, board: List[List[int]], player: int) -> List[List[int]]:
     splitted_code = list(valid_code)
@@ -105,7 +111,6 @@ def is_connected_recursive(i: int, j: int, player: int, board: List[List[int]], 
                     found, visited = is_connected_recursive(new_i, new_j, player, board, visited)
                     if found:
                         return found, visited
-
     return False, visited
 
 def check_win_player1(board: List[List[int]]) -> bool:
@@ -161,8 +166,20 @@ def check_win_player2(board: List[List[int]]) -> bool:
 def is_won(board) -> bool:
     return check_win_player1(board) or check_win_player2(board)
 
+def is_filled(board) -> bool:
+    found_empty = False
+    i = 0
+    while(i < len(board) and not found_empty):
+        j = 0
+        while(j < len(board) and not found_empty):
+            if(board[i][j] == 0):
+                found_empty = True
+            j += 1
+        i += 1
+    return not found_empty
+
 def play() -> None:
-    print_red("\n================ ");print_yellow("STARTING A NEW GAME");print_red_nl(" ================")
+    print_red("\n================ "); print_yellow("STARTING A NEW GAME"); print_red_nl(" ================")
     board = [[0 for _ in range(5)] for _ in range(5)]
     current_player = 1
     while(not is_won(board)):
@@ -180,21 +197,11 @@ def play() -> None:
             current_player = 1
     print_yellow_nl("=========== GAME ENDED =============")
     if(check_win_player1(board)):
-        print("Player 1",end="");print_green_nl(" WIN !!!")
-        print("Player 2",end="");print_red_nl(" LOSE !!!")
+        print("Player 1",end=""); print_green_nl(" WIN !!!")
+        print("Player 2",end=""); print_red_nl(" LOSE !!!")
     else:
-        print("Player 2",end="");print_green_nl(" WIN !!!")
-        print("Player 1",end="");print_red_nl(" LOSE !!!")
-    while True:
-        print("Do you want to save this game? ")
-        print("[Y/N] : ")
-        save = input_color("")
-        if(save.lower() == "y"):
-            pass
-        elif(save.lower() != "n"):
-            print_red_nl("Invalid Input\n")
-        else:
-            break
+        print("Player 2",end=""); print_green_nl(" WIN !!!")
+        print("Player 1",end=""); print_red_nl(" LOSE !!!")
     while True:
         print("Do you want to play again? ")
         print("[Y/N] : ")
@@ -205,19 +212,3 @@ def play() -> None:
             print_red_nl("Invalid Input\n")
         else:
             break
-
-if __name__ == "__main__":
-    board = [[1, 1, 0, 2, 0],
-             [0, 1, 0, 2, 2],
-             [2, 2, 2, 1, 1],
-             [2, 2, 1, 1, 0],
-             [1, 1, 2, 1, 1]]    # Assuming set_hex_IO and display_board functions are defined
-    display_board(board)
-
-    result1 = check_win_player1(board)
-    print(f"Player 1 : {result1}")
-    result2 = check_win_player2(board)
-    print(f"Player 2 : {result2}")
-
-
-
